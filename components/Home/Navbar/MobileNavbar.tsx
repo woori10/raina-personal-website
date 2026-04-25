@@ -1,0 +1,43 @@
+import { NavLinks } from "@/Constant/Constants";
+import { X } from "lucide-react";
+import Link from "next/link";
+
+type MobileNavProps = {
+  showNav: boolean;
+  closeNav: () => void;
+};
+
+const MobileNavbar = ({ showNav, closeNav }: MobileNavProps) => {
+  const sideBarOpenClose = showNav ? "translate-x-0" : "translate-x-[-100%]";
+
+  return (
+    <div>
+      {/* overlay */}
+      <div
+        onClick={closeNav}
+        className={`fixed inset-0 ${sideBarOpenClose} transform transition-all duration-500 z-40 bg-black opacity-70 w-full h-screen`}
+      />
+
+      {/* nav links */}
+      <div
+        className={`text-white ${sideBarOpenClose} fixed flex flex-col justify-center h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-purple-700 space-y-6 z-50`}
+      >
+        {NavLinks.map((link, index) => (
+          <Link key={index} href={link.href}>
+            <p className="text-white w-fit text-2xl ml-12 border-b-[1.5px] pb-1 border-white">
+              {link.name}
+            </p>
+          </Link>
+        ))}
+
+        {/* Close Icon */}
+        <X
+          onClick={closeNav}
+          className="absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6 cursor-pointer"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default MobileNavbar;
