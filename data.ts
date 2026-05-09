@@ -2,148 +2,127 @@ import {
   Briefcase,
   Cloud,
   Code2,
-  Coffee,
   Cpu,
   Database,
   GitBranch,
   Globe,
-  GraduationCap,
   Layers,
-  Layout,
   Mail,
   MapPin,
+  Monitor,
   Palette,
   Phone,
   Server,
   Smartphone,
   Terminal,
+  Users,
 } from "lucide-react";
 
-import { FaGithub, FaLinkedin, FaLinkedinIn, FaTwitter } from "react-icons/fa6";
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa6";
 
 type StatType = {
   label: string;
   value: string;
 };
 
-export const stats: StatType[] = [
-  { label: "Years Experience", value: "5+" },
-  { label: "Projects Completed", value: "50+" },
-  { label: "Happy Clients", value: "30+" },
-  { label: "Students Taught", value: "1000+" },
-];
-
 export const highlights = [
-  { icon: MapPin, text: "Based in San Francisco, CA" },
-  { icon: Briefcase, text: "Open for freelance work" },
-  { icon: GraduationCap, text: "CS Graduate from Stanford" },
-  { icon: Coffee, text: "Powered by coffee & curiosity" },
-];
-
-export const userReviewData = [
-  {
-    id: 1,
-    name: "John Doe",
-    profession: "Real Estate Agent",
-    userImage: "/images/u1.jpg",
-    review:
-      "A wonderful experience! The platform made it easy to find exactly what I needed. lorem ipsum dolor sit ame",
-  },
-  {
-    id: 2,
-    name: "Mike Smith",
-    profession: "Business Owner",
-    userImage: "/images/u2.jpg",
-    review:
-      "Great selection of properties and seamless process. Highly recommended for anyone looking to invest.",
-  },
-  {
-    id: 3,
-    name: "Alex Johnson",
-    profession: "Web developer",
-    userImage: "/images/u3.jpg",
-    review:
-      "The website helped me find my dream home quickly and hassle-free. Exceptional service!",
-  },
-  {
-    id: 4,
-    name: "Emily Clark",
-    profession: "Interior Designer",
-    userImage: "/images/u4.jpg",
-    review:
-      "Fantastic range of properties with clear details. The best platform for home and design inspiration!",
-  },
+  { icon: MapPin, text: "Bekasi, Indonesia" },
+  { icon: Briefcase, text: "Open for Internship and Freelance" },
+  { icon: Monitor, text: "5+ Web Projects" },
+  { icon: Users, text: "10+ Organizations & Committees" },
 ];
 
 export const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@johndoe.dev",
+    value: "rainadw49@gmail.com",
     href: "mailto:hello@johndoe.dev",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+6281392133113",
+    // href: "wa.me/6281392133113",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "Bekasi, Indonesia",
     href: "#",
   },
 ];
 
 export const socialLinks = [
-  { icon: FaGithub, href: "https://github.com", label: "GitHub" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FaGithub, href: "https://github.com/woori10", label: "GitHub" },
+  {
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/in/rainadisa",
+    label: "LinkedIn",
+  },
   { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
+  {
+    icon: FaInstagram,
+    href: "https://www.instagram.com/raina_disa/",
+    label: "Instagram",
+  },
 ];
 
 export const experiences = [
   {
     type: "work",
-    title: "Senior Full-Stack Developer",
-    company: "TechCorp Inc.",
-    period: "2022 - Present",
+    title: "Teaching Assistant",
+    organization: "IPB University",
+    period: "January 2026 - Present",
+    description:
+      "Assisted students in the Information Systems Project Management course by guiding project planning, documentation, and teamwork collaboration during practical sessions.",
+  },
+  {
+    type: "organization",
+    title: "General Treasurer I",
+    organization: "Himavo Micro IT 2024/2025",
+    period: "Nov 2024 - Nov 2025",
     description:
       "Leading development of enterprise SaaS products. Mentoring junior developers and implementing best practices.",
-    technologies: ["React", "Node.js", "AWS", "TypeScript"],
   },
   {
-    type: "work",
-    title: "Full-Stack Developer",
-    company: "StartupXYZ",
-    period: "2020 - 2022",
-    description:
-      "Built and maintained multiple web applications. Collaborated with design team to implement responsive UIs.",
-    technologies: ["Vue.js", "Python", "PostgreSQL", "Docker"],
-  },
-  {
-    type: "education",
-    title: "Master of Computer Science",
-    company: "Stanford University",
-    period: "2018 - 2020",
+    type: "organization",
+    title: "Head of Event Division",
+    organization: "Pemilihan Raya Himavo Micro IT 2024/2025",
+    period: "Agustus - Oktober 2024",
     description:
       "Specialized in distributed systems and machine learning. Thesis on scalable microservices architecture.",
     technologies: ["Research", "AI/ML", "Distributed Systems"],
   },
   {
-    type: "work",
-    title: "Junior Developer",
-    company: "WebAgency Co.",
-    period: "2018 - 2020",
+    type: "organization",
+    title: "Volunteer Staff Event Division",
+    organization: "POMN Himavo Micro IT 2024",
+    period: "Juli - November 2024",
     description:
       "Developed client websites and e-commerce platforms. Gained experience in agile methodologies.",
     technologies: ["JavaScript", "PHP", "MySQL", "WordPress"],
   },
   {
-    type: "education",
-    title: "Bachelor of Computer Science",
-    company: "UC Berkeley",
-    period: "2014 - 2018",
+    type: "organization",
+    title: "Head of Documentation Division",
+    organization: "IT Festival 2024",
+    period: "April - September 2024",
+    description:
+      "Strong foundation in algorithms, data structures, and software engineering principles.",
+    technologies: ["Computer Science", "Mathematics", "Problem Solving"],
+  },
+  {
+    type: "organization",
+    title: "Event Division Staff",
+    organization: "PENDIKAR 2024",
+    period: "April - Juni 2024",
     description:
       "Strong foundation in algorithms, data structures, and software engineering principles.",
     technologies: ["Computer Science", "Mathematics", "Problem Solving"],
@@ -159,28 +138,28 @@ export const footerSocialLinks = [
 
 export const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "E-Commerce Admin Management",
     description:
       "A full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
     image: "/images/project_1.jpeg",
-    techStack: ["Next.js", "TypeScript", "Stripe", "MongoDB"],
-    githubUrl: "https://github.com",
+    techStack: ["Laravel", "PHP", "Bootstrap", "phpMyAdmin"],
+    githubUrl: "https://github.com/Kigamekun/FLORATRADE-MP",
   },
   {
-    title: "Task Management App",
+    title: "Tools Management App",
     description:
       "Collaborative project management tool with real-time updates, Kanban boards, and team analytics.",
     image: "/images/project_2.jpeg",
-    techStack: ["React", "Node.js", "PostgreSQL"],
-    githubUrl: "https://github.com",
+    techStack: ["React", "JavaSCript", "Tailwind", "phpMyAdmin"],
+    githubUrl: "https://github.com/woori10/project-simipanar",
   },
   {
     title: "Task Management App",
     description:
       "Collaborative project management tool with real-time updates, Kanban boards, and team analytics.",
     image: "/images/project_4.jpeg",
-    techStack: ["React", "Node.js", "PostgreSQL"],
-    githubUrl: "https://github.com",
+    techStack: ["Next.Js", "TypeScript", "Tailwind", "Supabase"],
+    githubUrl: "https://github.com/woori10/jadwal-tugas-smst6",
   },
 ];
 
@@ -193,13 +172,12 @@ export const skillCategories = [
       { name: "TypeScript", icon: Terminal },
       { name: "Tailwind CSS", icon: Palette },
       { name: "React Native", icon: Smartphone },
-      { name: "Vue.js", icon: Layout },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Node.js", icon: Server },
+      { name: "Supabase", icon: Server },
       { name: "Express", icon: Layers },
       { name: "MongoDB", icon: Database },
       { name: "PostgreSQL", icon: Database },

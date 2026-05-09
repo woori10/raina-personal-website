@@ -2,21 +2,21 @@
 
 import ThemeToogle from "@/components/Helper/ThemeToogle";
 import { NavLinks } from "@/Constant/Constants";
-import { MenuIcon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-type NavProps = {
-  openNav: () => void;
-};
-
-const Navbar = ({ openNav }: NavProps) => {
+const Navbar = () => {
   const [navBg, setNavBg] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     const handler = () => {
-      if (window.scrollY >= 90) setNavBg(true);
-      if (window.scrollY < 90) setNavBg(false);
+      if (window.scrollY >= 90) {
+        setNavBg(true);
+      } else {
+        setNavBg(false);
+      }
     };
 
     window.addEventListener("scroll", handler);
@@ -26,48 +26,88 @@ const Navbar = ({ openNav }: NavProps) => {
 
   return (
     <div
-      className={`transition-all ${navBg ? "dark:bg-gray-800 bg-white shadow-md" : "fixed"} duration-200 h-[12vh] z-50 fixed w-full`}
+      className={`
+fixed top-6 left-1/2 -translate-x-1/2
+w-[92%] lg:w-[85%]
+z-50
+rounded-[2rem]
+border border-gray-300 dark:border-gray-700
+transition-all duration-300
+overflow-hidden
+
+${
+  navBg
+    ? "bg-white/80 dark:bg-gray-900/70 shadow-xl"
+    : "bg-white/50 dark:bg-gray-900/40"
+}
+
+${showNav ? "max-lg:h-[420px] h-[10vh]" : "h-[10vh]"}
+`}
     >
-      <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
-        {/* Theme Toogle */}
+      {/* TOP NAV */}
+      <div className="flex items-center justify-between h-[10vh] px-6">
+        {/* Left */}
         <ThemeToogle />
-        {/* Nav Links */}
+
+        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center space-x-10">
-          {NavLinks.map((link, index) => {
-            return (
-              <Link
-                key={index}
-                href={link.href}
-                className="dark:text-white text-black hover:text-yellow-500 dark:hover:text-yellow-200 font-semibold transition-all duration-200"
-              >
-                <p>{link.name}</p>
-              </Link>
-            );
-          })}
+          {NavLinks.map((link, index) => (
+            <Link
+              key={index}
+              href={link.href}
+              className="
+              text-black dark:text-white
+              font-semibold
+              transition-all duration-300
+              hover:text-blue-400 dark:hover:text-blue-300
+              hover:scale-105
+              "
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
-        {/* Button CV
-            <div className="flex items-center space-x-4">
-                <a
-                    href="#_"
-                     className="relative z-20 inline-flex items-center justify-center px-6 sm:px-8 py-3 font-bold 
-                    text-white dark:text-black
-                    bg-indigo-600 dark:bg-white
-                    border border-transparent dark:border-white/30
-                    rounded-md cursor-pointer
-                    transition-all duration-300
-                    hover:bg-indigo-700 
-                    dark:hover:bg-white/80">
-                    <span className="relative z-20 flex items-center space-x-2 text-sm">
-                        <Download className="w-4 h-4"/>
-                        <span>Download CV</span>
-                    </span>
-                </a>
-            </div> */}
-        {/* Burger Menu */}
-        <MenuIcon
-          onClick={openNav}
-          className="w-6 h-6 cursor-pointer text-black dark:text-white lg:hidden"
-        />
+
+        {/* Mobile Burger */}
+        <button onClick={() => setShowNav(!showNav)} className="lg:hidden">
+          {showNav ? (
+            <X className="w-6 h-6 text-black dark:text-white" />
+          ) : (
+            <Menu className="w-6 h-6 text-black dark:text-white" />
+          )}
+        </button>
+      </div>
+
+      {/* MOBILE MENU */}
+      <div
+        className={`
+        lg:hidden
+        flex flex-col items-center justify-center
+        gap-8
+        transition-all duration-300
+        ${
+          showNav
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-10 pointer-events-none"
+        }
+        `}
+      >
+        {NavLinks.map((link, index) => (
+          <Link
+            key={index}
+            href={link.href}
+            onClick={() => setShowNav(false)}
+            className="
+            text-lg
+            font-medium
+            text-black dark:text-white
+            hover:text-blue-400
+            transition-all duration-300
+            "
+          >
+            {link.name}
+          </Link>
+        ))}
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ import Contact from "./Contact/Contact";
 import Experience from "./Experience/Experience";
 import Hero from "./Hero/Hero";
 import Project from "./Project/Project";
-import Skills from "./Skills/Skills";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -29,9 +28,9 @@ const Home = () => {
       {/* <p>Home Page</p> */}
       <Hero />
       <About />
-      <Skills />
-      <Project />
+      {/* <Skills /> */}
       <Experience />
+      <Project />
       <Contact />
     </div>
   );

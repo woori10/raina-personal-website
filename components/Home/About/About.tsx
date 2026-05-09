@@ -4,14 +4,17 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-900">
+    <div
+      id="about"
+      className="py-40 md:py-28 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200  dark:bg-gradient-to-b dark:from-slate-950 dark:via-blue-950 dark:to-slate-900"
+    >
       {/* section heading */}
       <SectionHeading
         title_1="About"
         title_2="Me"
         description="Get to know the developer behind the code"
       />
-      <div className="grid w-[80%] mx-auto lg:grid-cols-2 gap-12 items-center">
+      <div className="grid w-[75%] mx-auto lg:grid-cols-2 gap-8 items-center">
         {/* image */}
         <div
           data-aos="fade-right"
@@ -19,12 +22,12 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           className="relative"
         >
-          <div className="aspect-square rounded-2xl overflow-hidden p-2">
+          <div className="aspect-square  rounded-2xl overflow-hidden p-2">
             <Image
               alt="profile"
-              src={"/images/profile.jpg"}
-              width={500}
-              height={700}
+              src={"/images/me_profile.jpg"}
+              width={450}
+              height={400}
               className="h-full object-center rounded-xl border border-gray-300 dark:shadow-none dark:border-gray-700"
             />
           </div>
@@ -36,17 +39,19 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           className="space-y-6"
         >
-          <h3 className="text-2xl font-semibold">
+          <h3 className="text-2xl font-semibold text-center md:text-left">
             A sixth-semester Software Engineering Technology student at IPB
             University
           </h3>
-          <p className="text-muted-foreground leading-relaxed">
-            Software Engineering Technology student who experienced in
-            developing web projects from user requirement analysis to
-            implementing functional and responsive user interfaces using modern
-            web technologies.
+          <p className="text-muted-foreground leading-relaxed text-justify">
+            Software Engineering Technology student who experienced in{" "}
+            <span className="font-bold">developing web projects </span> from{" "}
+            <span className="font-bold">user requirement analysis</span> to{" "}
+            <span className="font-bold">implementing functional</span> and{" "}
+            <span className="font-bold">responsive user interfaces</span> using
+            modern web technologies.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed text-justify">
             Actively involved in organizations and committees, demonstrating
             strong leadership, communication, and teamwork skills
           </p>
@@ -68,26 +73,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      {/* stats */}
-      {/* <div className="my-16 w-[80%] mx-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat) => {
-            return (
-              <div
-                key={stat.label}
-                className="bg-white dark:bg-gray-800 shadow rounded-xl p-6 text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 dark:text-purple-300">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -18,7 +18,7 @@ const ProjectCard = ({
   githubUrl,
 }: Props) => {
   return (
-    <div className="group relative bg-white dark:bg-gray-800 shadow-lg rounded-2xl overflow-hidden">
+    <div className="group relative bg-white broder border-gray-300 dark:bg-gray-800 shadow-lg rounded-2xl overflow-hidden">
       {/* image */}
       <div className="relative h-48 overflow-hidden">
         <Image
@@ -31,7 +31,7 @@ const ProjectCard = ({
       </div>
       {/* main content */}
       <div className="p-6">
-        <h3 className="text-xl text-black dark:text-white font-semibold mb-2  group-hover:text-blue-500 transition-colors">
+        <h3 className="text-lg text-black dark:text-white font-semibold mb-2  group-hover:text-blue-500 transition-colors">
           {title}
         </h3>
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">

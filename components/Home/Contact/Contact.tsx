@@ -7,7 +7,10 @@ import { Send } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-900">
+    <div
+      id="contact"
+      className="py-40 md:py-28 bg-gradient-to-t from-blue-50 via-blue-100 to-blue-200 dark:bg-gradient-to-t dark:from-slate-950 dark:via-blue-950 dark:to-slate-900"
+    >
       <SectionHeading
         title_1="Get In"
         title_2="Touch"
@@ -53,9 +56,9 @@ const Contact = () => {
                 })}
               </div>
               {/* social media icons */}
-              <div>
+              <div className="flex flex-col items-center lg:items-start">
                 <h4 className="text-lg font-medium mb-4">Follow Me</h4>
-                <div className="flex gap-3">
+                <div className="flex gap-3 items-center">
                   {socialLinks.map((link) => {
                     return (
                       <a
@@ -87,7 +90,7 @@ const Contact = () => {
                   <Input
                     id="name"
                     name="name"
-                    placeholder="John Smith"
+                    placeholder="Your Name"
                     required
                     className="bg-gray-100"
                   />

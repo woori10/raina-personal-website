@@ -4,7 +4,10 @@ import { Briefcase, GraduationCap } from "lucide-react";
 
 const Experience = () => {
   return (
-    <div className="py-16 bg-gray-100 dark:bg-gray-950">
+    <div
+      id="experience"
+      className="py-40 md:py-28 px-16 bg-gradient-to-t from-blue-50 via-blue-100 to-blue-200 dark:bg-gradient-to-t dark:from-slate-950 dark:via-blue-950 dark:to-slate-900"
+    >
       <SectionHeading
         title_1="Experience "
         title_2="Organization"
@@ -36,19 +39,19 @@ const Experience = () => {
               {/* content */}
               <div className="ml-16 md:ml-0 md:w-[calc(50%-2rem)]">
                 <div className="bg-white dark:bg-gray-900 shadow-md rounded-xl p-6 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-2 text-sm text-blue-500 mb-2">
+                  <div className="flex items-center gap-2 text-sm text-blue-500 mb-4">
                     <span className="px-3 py-1 rounded-full bg-blue-600/10 font-mediium">
                       {item.period}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {item.company}
+                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm font-light mb-3">
+                    {item.organization}
                   </p>
-                  <p className="text-muted-foreground text-sm mb-4">
+                  <p className="text-muted-foreground text-sm text-justify">
                     {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  {/* <div className="flex flex-wrap gap-2">
                     {item.technologies.map((tech) => {
                       return (
                         <span
@@ -59,7 +62,7 @@ const Experience = () => {
                         </span>
                       );
                     })}
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="hidden md:block md:w-[calc(50%-2rem)]"></div>
